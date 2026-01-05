@@ -1,28 +1,3 @@
-# CLItool
-
-Track a personal stock watchlist from the command line. The tool fetches current prices from Yahoo Finance, prints summary statistics, optionally exports CSV, and supports a one-command refresh of saved data.
-
-## Summary
-
-- Save a personal watchlist to `~/.cli_watchlist.json` with add/remove/list commands.
-- Fetch real-time prices with `refresh` (saved tickers) or `fetch` (ad-hoc tickers).
-- Print per-symbol quotes plus min/max/average summary stats.
-- Optionally export results to CSV for further analysis.
-
-## Usage
-
-```bash
-python watchlist.py add AAPL MSFT NVDA
-python watchlist.py list
-python watchlist.py refresh
-python watchlist.py refresh --csv watchlist.csv
-python watchlist.py fetch TSLA AMZN --csv quotes.csv
-python watchlist.py remove MSFT
-```
-
-## Code
-
-```python
 #!/usr/bin/env python3
 import argparse
 import csv
@@ -217,9 +192,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-```
-
-## Notes
-
-- Watchlist data is stored in `~/.cli_watchlist.json`.
-- Quotes are fetched from the public Yahoo Finance endpoint.
